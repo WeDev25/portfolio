@@ -197,20 +197,32 @@ img {
   transition: var(--transition);
 }
 
-.theme-toggle .sun-icon {
+.theme-toggle .sun-icon,
+.theme-toggle .moon-icon {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.theme-toggle .sun-icon {
   opacity: 0;
-  transform: rotate(90deg) scale(0);
+  transform: translate(-50%, -50%) rotate(90deg) scale(0);
+}
+
+.theme-toggle .moon-icon {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0) scale(1);
 }
 
 [data-theme="light"] .theme-toggle .sun-icon {
   opacity: 1;
-  transform: rotate(0) scale(1);
+  transform: translate(-50%, -50%) rotate(0) scale(1);
 }
 
 [data-theme="light"] .theme-toggle .moon-icon {
   opacity: 0;
-  transform: rotate(-90deg) scale(0);
+  transform: translate(-50%, -50%) rotate(-90deg) scale(0);
 }
 
 .hamburger {
@@ -228,6 +240,141 @@ img {
   height: 2px;
   background: var(--text);
   transition: var(--transition);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--card-bg);
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 80px 24px 40px;
+    gap: 0;
+    transition: var(--transition);
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 16px 0;
+    width: 100%;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--secondary);
+  }
+
+  .nav-links > li:not(.mobile-header):not(.mobile-copyright) a.active {
+    color: var(--accent);
+    font-weight: 600;
+    padding-left: 8px;
+    border-left: 3px solid var(--accent);
+  }
+
+  .nav-links .mobile-header a {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+
+  .nav-links .mobile-header a.active {
+    color: var(--accent);
+    font-weight: 700;
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-links {
+    justify-content: space-between;
+  }
+
+  .nav-links .mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid var(--secondary);
+    margin-bottom: 10px;
+  }
+
+  .nav-links .mobile-header .logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.5px;
+  }
+
+  .nav-links .mobile-header .logo span {
+    color: var(--logo-accent);
+  }
+
+  .mobile-theme-toggle {
+    display: flex;
+  }
+
+  .desktop-theme-toggle {
+    display: none;
+  }
+
+  .nav-links .mobile-copyright {
+    display: block;
+    padding: 20px 0 0 0;
+    border-top: 1px solid var(--secondary);
+    margin-top: auto;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-links .mobile-logo,
+  .nav-links .mobile-copyright,
+  .nav-links .mobile-header {
+    display: none;
+  }
+
+  .mobile-theme-toggle {
+    display: none;
+  }
+
+  .desktop-theme-toggle {
+    display: flex;
+  }
 }
 
 /* Main Content */
@@ -816,58 +963,6 @@ section {
   .hero-card {
     max-width: 400px;
     margin: 0 auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background: var(--card-bg);
-    flex-direction: column;
-    justify-content: center;
-    gap: 32px;
-    transition: var(--transition);
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3);
-  }
-
-  .nav-links.active {
-    right: 0;
-  }
-
-  .nav-links a {
-    font-size: 1.2rem;
-  }
-
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-stats {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .section-header h2 {
-    font-size: 2rem;
-  }
-
-  .members-grid,
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
   }
 }
 
