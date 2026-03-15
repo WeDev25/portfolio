@@ -28,6 +28,7 @@ const teamMembers = [
       "Python/Django",
       "Java/Spring Boot",
       "C",
+      "Git",
       "Docker",
       "HTML/CSS",
       "JavaScript",
