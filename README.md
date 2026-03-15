@@ -12,15 +12,18 @@
 ### Layout Structure
 
 **Pages:**
+
 1. `index.html` - Presentation/Home page
 2. `membres.html` - Team members page (randomized display)
 3. `projets.html` - Projects/Products showcase
 
 **Common elements:**
+
 - Fixed navigation bar (top)
 - Footer with social links
 
 **Responsive breakpoints:**
+
 - Mobile: < 768px
 - Tablet: 768px - 1024px
 - Desktop: > 1024px
@@ -28,6 +31,7 @@
 ### Visual Design
 
 **Color Palette:**
+
 - Primary (light mode - default): `#FFFFFF`
 - Primary (dark mode): `#0A0F1E` (deep navy)
 - Accent: `#F79B35` (vibrant orange)
@@ -36,16 +40,19 @@
 - Secondary: `#F5F5F5` (light mode), `#1A2342` (dark mode)
 
 **Typography:**
+
 - Headings: "Clash Display", sans-serif (from CDN)
 - Body: "Satoshi", sans-serif (from CDN)
 - Fallback: system-ui, sans-serif
 
 **Spacing:**
+
 - Section padding: 80px vertical
 - Container max-width: 1200px
 - Card gap: 32px
 
 **Visual effects:**
+
 - Cards with subtle glow on hover
 - Smooth transitions (0.3s ease)
 - Gradient accent lines
@@ -54,12 +61,14 @@
 ### Components
 
 **Navigation:**
+
 - Logo (text-based)
 - Links: Accueil, Membres, Projets
 - Dark/Light mode toggle
 - Hamburger menu on mobile
 
 **Member Cards:**
+
 - Circular avatar placeholder (200x200px)
 - Name
 - Role (Back-end / Front-end)
@@ -68,6 +77,7 @@
 - Social links
 
 **Project Cards:**
+
 - Project image/thumbnail
 - Title
 - Description
@@ -75,6 +85,7 @@
 - Links (GitHub, Live)
 
 **Footer:**
+
 - Copyright
 - Social icons
 - Theme toggle (small)
@@ -104,21 +115,23 @@
    - Scroll-triggered fade-ins
 
 ### User Interactions
+
 - Click navigation links → page change
 - Click theme toggle → color scheme change
 - Hover on cards → lift + glow effect
 
 ### Data Handling
+
 - Static member data in JS arrays
 - LocalStorage for theme preference
 
 ## 4. Acceptance Criteria
 
-- [ ] All 3 pages load without errors
-- [ ] Members appear in random order on each visit to membres.html
-- [ ] Theme toggle switches between dark/light modes
-- [ ] Theme preference persists across sessions
-- [ ] All pages are responsive (mobile, tablet, desktop)
-- [ ] Hover effects work on all interactive elements
-- [ ] Navigation works correctly between pages
-- [ ] Color palette matches specification exactly
+- [x] All 3 pages load without errors
+- [x] Members appear in random order on each visit to membres.html
+- [x] Theme toggle switches between dark/light modes
+- [x] Theme preference persists across sessions
+- [x] All pages are responsive (mobile, tablet, desktop)
+- [x] Hover effects work on all interactive elements
+- [x] Navigation works correctly between pages
+- [x] Color palette matches specification exactly
